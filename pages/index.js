@@ -10,8 +10,6 @@ export default function Home() {
 
   const { data: session } = useSession()
 
-  
-
   function handleSignOut(){
     signOut()
   }
