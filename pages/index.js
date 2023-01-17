@@ -51,16 +51,12 @@ function User({ session, handleSignOut }){
           <div className="flex justify-center">
             <button onClick={handleSignOut}>Sign Out</button>
           </div>
-
-          <div className='flex justify-center'>
-            <Link href={'/profile'}>profile</Link>
-          </div>
+          
       </main>
   )
 }
 export async function getServerSideProps({ req }){
   const session = await getSession({ req })
-
   if(!session){
     return {
       redirect : {

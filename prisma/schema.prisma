@@ -44,6 +44,7 @@ model User {
   password      String?
   emailVerified DateTime?
   image         String?
+  role          String?
   accounts      Account[]
   sessions      Session[]
 }
@@ -54,4 +55,20 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Service {
+  id          String @id @default(cuid())
+  name        String?
+  description String?
+  image       String?
+  price       Int?
+}
+
+model Staff {
+  id          String @id @default(cuid())
+  name        String?
+  role        String?
+  description String?
+  image       String?
 }
